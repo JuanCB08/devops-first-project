@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.12"
 
-- name: Instalar dependencias
+      - name: Instalar dependencias
         run: pip install -r requirements.txt pytest
 
       - name: Correr pruebas
