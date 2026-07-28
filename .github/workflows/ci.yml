@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Pruebas y validación
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código del repo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Correr pruebas
+        run: python -m pytest test_app.py -v
+
+      - name: Validar que la imagen Docker construye correctamente
+        run: docker build -t devops-first-project .
