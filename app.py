@@ -7,8 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return jsonify(
-        mensaje="Desplegado por Juan - DEVOps en accion !!!!!!!!!!!!!!!!!!! ",
-        mensaje="Pruebas de Cambios en PRD inmediatos ",
+        mensaje="Desplegado por Juan - DEVOps en accion !!!!!!!!!!!!!!!!!!! /n Vamos por mas Cambios !!!!! ",
         estado="ok",
     )
 
